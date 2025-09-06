@@ -21,7 +21,7 @@
 # 标签用xxx_o31_ceiling_lights能便于区分
 image dormitory_o31_ceiling_lights = MASFilterableSprite(
     "mod_assets/location/dormitory/deco/o31/ceiling_lights.png",#图片路径
-    highlight=MASFilterMap(night="0")  # 夜晚夜晚显示灯光
+    highlight=MASFilterMap(night="0")  # 夜晚显示灯光
 )#灯光路径"mod_assets/location/dormitory/deco/o31/ceiling_lights-h0.png"
 init 501 python:
     # 注册万圣节天花板灯光
@@ -111,14 +111,9 @@ image dormitory_o31_vignette = Image("mod_assets/location/dormitory/deco/o31/vig
 # 圣诞节(d25)装饰物定义
 #======================================================================
 
-# 圣诞节横幅装饰
+# 圣诞节墙(窗户)装饰
 image dormitory_d25_banners = MASFilterSwitch(
     "mod_assets/location/dormitory/deco/d25/bgdeco.png"
-)
-
-# 圣诞节榭寄生装饰
-image mas_mistletoe = MASFilterSwitch(
-    "mod_assets/location/dormitory/deco/d25/mistletoe.png"
 )
 
 # 圣诞节灯光装饰 - 根据时间和动画设置切换不同状态
@@ -263,7 +258,7 @@ init 501 python:
         "mas_o31_candles",
         submod_background_dormitory.background_id,
         MASAdvancedDecoFrame(zorder=5),  # 设置图层顺序
-        replace_tag="o31_candles"
+        replace_tag="dormitory_o31_candles"
     )
 
     # 注册万圣节南瓜灯
@@ -287,7 +282,7 @@ init 501 python:
         "mas_o31_ceiling_deco",
         submod_background_dormitory.background_id,
         MASAdvancedDecoFrame(zorder=6),  # 设置图层顺序
-        replace_tag="dormitory_ceiling_deco"
+        replace_tag="dormitory_o31_ceiling_deco"
     )
 
     # 注册万圣节渐晕效果
@@ -298,7 +293,7 @@ init 501 python:
         replace_tag="dormitory_o31_vignette"
     )
 
-    # 注册圣诞节横幅
+    # 注册圣诞节墙(窗户)
     MASImageTagDecoDefinition.register_img(
         "mas_d25_banners",
         submod_background_dormitory.background_id,
